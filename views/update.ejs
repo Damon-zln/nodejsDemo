@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/bootstrap.min.js"></script>
+  </head>
+  <body>
+		<div class="panel panel-default container" style="width: 50%;">
+			<div class="panel-heading">
+				<span><b>修改信息</b></span>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal" role="form" action="/users/update" method="post">
+					<input type="hidden" value="<%= datas[0].id %>" name="id">
+					<div class="form-group">
+						<label  for="name" class="col-sm-3 control-label">姓名</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" name="name" value="<%= datas[0].name %>" disabled />
+						</div>
+					</div>
+					<div class="form-group">
+						<label  for="age" class="col-sm-3 control-label">年龄</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" name="age" value="<%= datas[0].age %>" placeholder="请输入年龄" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label  for="department" class="col-sm-3 control-label">部门</label>
+						<div class="col-sm-6">
+							<select class="form-control" name="department" id="department">
+								<option value="销售">销售</option>
+								<option value="开发">开发</option>
+								<option value="管理">管理</option>
+								<option value="运营">运营</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label  for="phone" class="col-sm-3 control-label">联系方式</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" name="phone" value="<%= datas[0].phone %>" placeholder="请输入联系方式" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-6">
+							<button type="submit" class="btn btn-primary">提交</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	<script type="text/javascript">
+		$(function(){
+			$('#department').val('<%= datas[0].department %>');
+		})
+	</script>
+  </body>
+</html>
