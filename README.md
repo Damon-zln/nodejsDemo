@@ -1,6 +1,7 @@
 # nodejsDemo
 NodeJS+Express+mysql
 
+------------------------------------------------------------------------
 #mysql create code
 CREATE TABLE `user` (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
